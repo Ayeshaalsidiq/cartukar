@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --yellow: #fdcf33;
+  --light-yellow: #ffee80;
+  --black: #130f40;
+  --light-color: #666;
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transform: all 0.2s linear;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.car-image {
+  width: 100%;
+  height: auto;
+}
+.gallery {
+  display: flex;
+  margin-top: 10px;
+}
+.gallery img {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc; /* Border diperkecil menjadi 1px */
+}
+.details {
+  margin-top: 20px;
+}
+.details h2 {
+  color: #333;
+}
+.details p {
+  color: #666;
+}
+.details ul {
+  list-style-type: none; /* Menghilangkan bullet default */
+  padding: 0;
+  margin: 0;
+}
+.details ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #666;
+}
+.details ul li i {
+  margin-right: 10px;
+  color: var(--black); /* Warna ikon sesuai tema */
+}
+.details ul li strong {
+  color: var(--black); /* Warna teks tebal sesuai tema */
+}
+.small-text {
+  font-size: 0.8em; /* Ukuran font lebih kecil */
+  color: #ed2323; /* Warna teks yang lebih lembut */
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(
+    45deg,
+    var(--black),
+    var(--light-color)
+  ); /* Gradient */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-right: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
+}
+
+.btn:hover {
+  background: linear-gradient(
+    45deg,
+    var(--yellow),
+    var(--light-yellow)
+  ); /* Gradient saat hover */
+  color: var(--black);
+  transform: scale(1.05);
+}
+h2 {
+  display: flex;
+  align-items: center; /* Pusatkan vertikal */
+  justify-content: space-between; /* Sejajarkan judul dan ikon */
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px; /* Jarak antar ikon */
+}
+
+.like-btn,
+.share-btn {
+  display: inline-block;
+  padding: 8px;
+  border-radius: 50%; /* Bentuk bulat */
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.like-btn {
+  color: #ff4757; /* Warna merah untuk Like */
+}
+
+.like-btn:hover {
+  color: #ff6b81; /* Warna merah lebih terang saat hover */
+  transform: scale(1.1);
+}
+
+.share-btn {
+  color: #2ed573; /* Warna hijau untuk Share */
+}
+
+.share-btn:hover {
+  transform: scale(1.1);
+}
+
+.like-btn i,
+.share-btn i {
+  font-size: 18px; /* Ukuran ikon */
+}

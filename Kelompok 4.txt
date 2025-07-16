@@ -1,0 +1,23 @@
+Kelompok 4 
+CARTUKAR
+Ayesha Al Sidiq (607012400029)
+1.Home
+2.Explore Car
+3.About Us
+4.Our Location
+5.Contact Us
+6.Login Dealer
+
+Shaena Rintya Bella (607012400036)
+1.Regis Dealer
+2.Regis Pengguna
+3.FAQ
+4.Sell Car
+5.Trade In
+
+Muhammad Kevan Argya Arfian (607012400129)
+1.News
+2.Used Cars
+3.Certified
+4.Detail Mobil
+5.Check Out

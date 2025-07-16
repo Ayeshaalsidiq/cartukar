@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --yellow: #fdcf33;
+  --light-yellow: #ffee80;
+  --black: #130f40;
+  --light-color: #666;
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transform: all 0.2s linear;
+}
+html {
+  font-size: 62.5%;
+  overflow: auto;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+section {
+  padding: 2rem 9%;
+}
+.heading {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-size: 4.5rem;
+  color: var(--black);
+}
+.heading span {
+  position: relative;
+  z-index: 0;
+}
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 500;
+  font-size: 1.7rem;
+  cursor: pointer;
+  padding: 0.5rem 2.5rem;
+}
+.btn:hover {
+  background: var(--light-yellow);
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 9%;
+}
+.header .logo {
+  font-size: 2.5rem;
+  color: var(--black);
+  font-weight: bolder;
+}
+.header .logo span {
+  color: var(--yellow);
+}
+/* Navbar Styles */
+.header .navbar {
+  display: flex; /* Use flexbox for horizontal layout */
+  align-items: center; /* Center items vertically */
+  margin-right: 40rem;
+}
+
+.header .navbar a {
+  font-weight: bold;
+  font-size: 1.7rem; /* Font size for links */
+  margin: 0 1rem; /* Margin between links */
+  color: var(--black); /* Text color */
+  position: relative; /* Ensure positioning context for dropdown */
+}
+
+/* Dropdown Styles */
+/* Dropdown Styles */
+.dropdown {
+  position: relative; /* Set the parent to relative positioning */
+}
+.dropdown i {
+  margin-right: 2.3rem;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  display: none; /* Hide the dropdown by default */
+  position: absolute; /* Position it below the link */
+  top: 100%; /* Position it directly below the link */
+  left: 0rem; /* Align it to the left of the parent */
+  background-color: #fff; /* Background color */
+  box-shadow: var(--box-shadow); /* Add shadow for better visibility */
+  border-radius: 0.5rem; /* Rounded corners */
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: 200px; /* Set a fixed width for the dropdown */
+}
+
+.dropdown-menu a {
+  display: block; /* Make links block elements */
+  padding: 1.5rem; /* Increase padding for more clickable area */
+  color: var(--black); /* Text color */
+  text-decoration: none; /* Remove underline */
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--light-yellow); /* Change background on hover */
+}
+
+/* Show dropdown when hovering over the About link or the dropdown menu */
+.dropdown:hover .dropdown-menu {
+  display: block; /* Show the dropdown when hovering over the dropdown */
+}
+/* Dropdown Item Styles */
+.dropdown-menu a {
+  display: block; /* Make links block elements */
+  padding: 1rem; /* Add padding for clickable area */
+  color: var(--black); /* Text color */
+  text-decoration: none; /* Remove underline */
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--box-shadow); /* Change background on hover */
+}
+.header .navbar a:hover {
+  color: var(--yellow);
+}
+.header .btn {
+  margin-top: 0;
+}
+.header #login-btn i {
+  font-size: 2.5rem;
+  color: var(--light-yellow);
+  cursor: pointer;
+  display: none;
+}
+#menu-btn {
+  font-size: 2.5rem;
+  color: var(--light-color);
+  cursor: pointer;
+  display: none;
+}
+.header.active {
+  box-shadow: var(--box-shadow);
+  padding: 2rem 9%;
+}
+
+/* Login */
+.login-form-container {
+  position: fixed;
+  top: -105%;
+  left: 0;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.login-form-container.active {
+  top: 0;
+  opacity: 1;
+}
+.login-form-container form {
+  padding: 2rem;
+  margin: 2rem;
+  width: 40rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  background: #fff;
+  text-align: center;
+}
+.login-form-container form .buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.login-form-container form .btn {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.login-form-container form h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+}
+.login-form-container form .box {
+  border: 1px solid var(--light-color);
+  border-radius: 0.5rem;
+  margin: 0.7rem 0;
+  width: 100%;
+  text-transform: none;
+  color: var(--black);
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+}
+.login-form-container form p {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  color: var(--light-color);
+}
+.login-form-container form p a {
+  color: var(--yellow);
+  text-decoration: underline;
+}
+.login-form-container #close-login-form {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 5rem;
+  color: var(--black);
+  cursor: pointer;
+  opacity: 1;
+}
+/* News Section */
+.news {
+  padding: 4rem 9%;
+  background-color: #f9f9f9;
+  margin-top: 70px;
+}
+
+.news .heading {
+  text-align: center;
+  font-size: 3.5rem;
+  color: #333;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.news .heading span {
+  color: var(--yellow);
+}
+
+.news .heading::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: var(--yellow);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+/* News Categories */
+.news-categories {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.news-categories .category-link {
+  font-size: 1.2rem;
+  color: #333;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.news-categories .category-link.active,
+.news-categories .category-link:hover {
+  background-color: var(--yellow);
+  color: var(--black);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* Featured News */
+.featured-news {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.featured-news .featured-news-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-news .featured-news-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.featured-news .featured-news-item .content {
+  position: relative;
+  padding: 1.5rem;
+  background-color: #fff;
+}
+.featured-news .featured-news-item .date {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.featured-news .featured-news-item .content h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.featured-news .featured-news-item .content p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.featured-news .featured-news-item .content .btn {
+  display: inline-block;
+  color: #666;
+  padding: 0.6rem 1.2rem;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.featured-news .featured-news-item .content .btn:hover {
+  transform: translateY(-3px);
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* Jarak antar tombol diperbesar */
+  padding: 1rem 0; /* Padding untuk memberikan ruang lebih */
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5rem; /* Ukuran font diperbesar */
+  padding: 0.8rem 1.5rem; /* Padding tombol diperbesar */
+  border-radius: 8px; /* Sudut tombol lebih melengkung */
+  transition: all 0.3s ease;
+}
+
+.pagination a.page-number {
+  background-color: #f0f0f0;
+}
+
+.pagination a.page-number:hover,
+.pagination a.page-number.active {
+  background-color: var(--black);
+  color: var(--yellow);
+  transform: translateY(-2px); /* Efek hover sedikit naik */
+}
+
+.pagination a.prev,
+.pagination a.next {
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 1.3rem; /* Ukuran font untuk Prev dan Next lebih besar */
+}
+
+.pagination a.prev:hover,
+.pagination a.next:hover {
+  color: var(--black);
+  transform: translateY(-2px); /* Efek hover sedikit naik */
+}

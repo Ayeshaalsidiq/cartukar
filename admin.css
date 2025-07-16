@@ -1,0 +1,230 @@
+/* Variabel Warna & Global Reset (DIKEMBALIKAN KE VERSI AWAL) */
+:root {
+  --yellow: #fdcf33;
+  --light-yellow: #ffee80; /* Latar kuning pekat seperti awal */
+  --black: #130f40;
+  --light-color: #666;
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--light-yellow); /* Menggunakan warna kuning pekat */
+  color: var(--black);
+}
+
+/* Sidebar Styles (DIKEMBALIKAN KE VERSI AWAL - GELAP) */
+.sidebar {
+  width: 220px;
+  background-color: #0f0c29; /* Sidebar gelap seperti awal */
+  color: #fefce8;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  color: #fde68a; /* Teks judul sidebar kuning */
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  color: #e5e7eb; /* Teks link putih keabuan */
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: 0.3s;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1); /* Efek hover transparan */
+  transform: translateX(5px);
+}
+
+.nav-link.active {
+  background: linear-gradient(
+    90deg,
+    #fde68a,
+    #facc15
+  ); /* Link aktif gradasi kuning */
+  color: #1f2937; /* Teks link aktif gelap */
+  font-weight: 700;
+}
+
+/* Main Content & Header (Seperti Awal) */
+.main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: var(--black);
+  text-transform: capitalize;
+}
+
+.admin-profile {
+  background-color: var(--yellow);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: var(--black);
+  font-weight: bold;
+  box-shadow: var(--box-shadow);
+}
+
+/* === Dashboard Cards Styling (TETAP BARU + IKON BACKGROUND) === */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-header,
+.card-body,
+.card-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.card-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f3e8ff;
+  border-radius: 8px;
+  font-size: 20px;
+  color: #9333ea;
+}
+
+.card-body .card-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+}
+
+.card-footer .card-subtext {
+  font-size: 14px;
+  color: #718096;
+  margin: 0;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  font-size: 90px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.04);
+  transform: translateY(-50%) rotate(-15deg);
+  z-index: 0;
+  transition: transform 0.3s ease;
+}
+
+.card:hover::after {
+  transform: translateY(-50%) rotate(-5deg) scale(1.1);
+}
+
+.card.card-mobil::after {
+  content: "🚗";
+}
+.card.card-pengguna::after {
+  content: "👥";
+}
+.card.card-transaksi::after {
+  content: "🛒";
+}
+.card.card-komplain::after {
+  content: "😠";
+}
+
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* === Akhir dari Styling Dashboard Cards === */
+
+/* Footer (Seperti Awal) */
+.footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--light-color);
+  font-size: 0.9rem;
+  padding-top: 2rem;
+}

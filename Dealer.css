@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #0a2540, #1a365d),
+    url("https://via.placeholder.com/1920x1080") no-repeat center center/cover;
+  background-blend-mode: multiply;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 500px;
+}
+
+.logo h1 {
+  text-align: center;
+  color: #272d3c;
+  font-size: 2.5rem;
+}
+.logo h1 span {
+  color: #fdcf33;
+}
+
+.login-form-container {
+  margin-top: 1.5rem;
+}
+
+.login-form-container h2 {
+  text-align: center;
+  color: #1a1f2b;
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-group i {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  color: #888;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 40px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #272d3c;
+  outline: none;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #272d3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #1a1f2b;
+  color: #fdcf33;
+}
+
+p {
+  text-align: center;
+  color: #555;
+  margin-top: 1rem;
+}
+
+p a {
+  color: #272d3c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}

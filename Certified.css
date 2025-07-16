@@ -1,0 +1,738 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --yellow: #fdcf33;
+  --light-yellow: #ffee80;
+  --black: #130f40;
+  --light-color: #666;
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transform: all 0.2s linear;
+}
+html {
+  font-size: 62.5%;
+  overflow: auto;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+section {
+  padding: 2rem 9%;
+}
+.heading {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-size: 4.5rem;
+  color: var(--black);
+}
+.heading span {
+  position: relative;
+  z-index: 0;
+}
+.heading span::before {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--yellow);
+  clip-path: polygon(0 90%, 100% 80%, 100% 100%, 0% 100%);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 500;
+  font-size: 1.7rem;
+  cursor: pointer;
+  padding: 0.5rem 2.5rem;
+}
+.btn:hover {
+  background: var(--black);
+  color: var(--yellow);
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 9%;
+}
+.header .logo {
+  font-size: 2.5rem;
+  color: var(--black);
+  font-weight: bolder;
+}
+.header .logo span {
+  color: var(--yellow);
+}
+/* Navbar Styles */
+.header .navbar {
+  display: flex; /* Use flexbox for horizontal layout */
+  align-items: center; /* Center items vertically */
+  margin-right: 40rem;
+}
+
+.header .navbar a {
+  font-weight: bold;
+  font-size: 1.7rem; /* Font size for links */
+  margin: 0 1rem; /* Margin between links */
+  color: var(--black); /* Text color */
+  position: relative; /* Ensure positioning context for dropdown */
+}
+
+/* Dropdown Styles */
+/* Dropdown Styles */
+.dropdown {
+  position: relative; /* Set the parent to relative positioning */
+}
+.dropdown i {
+  margin-right: 2.3rem;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  display: none; /* Hide the dropdown by default */
+  position: absolute; /* Position it below the link */
+  top: 100%; /* Position it directly below the link */
+  left: 0rem; /* Align it to the left of the parent */
+  background-color: #fff; /* Background color */
+  box-shadow: var(--box-shadow); /* Add shadow for better visibility */
+  border-radius: 0.5rem; /* Rounded corners */
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: 200px; /* Set a fixed width for the dropdown */
+}
+
+.dropdown-menu a {
+  display: block; /* Make links block elements */
+  padding: 1.5rem; /* Increase padding for more clickable area */
+  color: var(--black); /* Text color */
+  text-decoration: none; /* Remove underline */
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--light-yellow); /* Change background on hover */
+}
+
+/* Show dropdown when hovering over the About link or the dropdown menu */
+.dropdown:hover .dropdown-menu {
+  display: block; /* Show the dropdown when hovering over the dropdown */
+}
+/* Dropdown Item Styles */
+.dropdown-menu a {
+  display: block; /* Make links block elements */
+  padding: 1rem; /* Add padding for clickable area */
+  color: var(--black); /* Text color */
+  text-decoration: none; /* Remove underline */
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--box-shadow); /* Change background on hover */
+}
+.header .navbar a:hover {
+  color: var(--yellow);
+}
+.header .btn {
+  margin-top: 0;
+}
+.header #login-btn i {
+  font-size: 2.5rem;
+  color: var(--light-yellow);
+  cursor: pointer;
+  display: none;
+}
+#menu-btn {
+  font-size: 2.5rem;
+  color: var(--light-color);
+  cursor: pointer;
+  display: none;
+}
+.header.active {
+  box-shadow: var(--box-shadow);
+  padding: 2rem 9%;
+}
+
+/* Login */
+.login-form-container {
+  position: fixed;
+  top: -105%;
+  left: 0;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.login-form-container.active {
+  top: 0;
+  opacity: 1;
+}
+.login-form-container form {
+  padding: 2rem;
+  margin: 2rem;
+  width: 40rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  background: #fff;
+  text-align: center;
+}
+.login-form-container form .buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.login-form-container form .btn {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.login-form-container form h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+}
+.login-form-container form .box {
+  border: 1px solid var(--light-color);
+  border-radius: 0.5rem;
+  margin: 0.7rem 0;
+  width: 100%;
+  text-transform: none;
+  color: var(--black);
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+}
+.login-form-container form p {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  color: var(--light-color);
+}
+.login-form-container form p a {
+  color: var(--yellow);
+  text-decoration: underline;
+}
+.login-form-container #close-login-form {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 5rem;
+  color: var(--black);
+  cursor: pointer;
+  opacity: 1;
+}
+/* Navbar End */
+
+body {
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 50px;
+}
+
+.juduljudul {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Tukar Tambah Mobil Section Styling */
+.judul {
+  background-image: url("pic/Certified.webp"); /* Ganti dengan path gambar Anda */
+  background-size: 40%; /* Ukuran gambar menjadi 40% dari lebar container */
+  background-position: left bottom 80%; /* Posisi gambar tetap di tengah */
+  background-repeat: no-repeat; /* Gambar tidak diulang */
+  padding: 20rem 0rem;
+  position: relative;
+  color: white; /* Warna teks agar kontras dengan background */
+}
+
+.judul .juduljudul {
+  position: relative;
+  z-index: 2;
+}
+
+.judul-content {
+  display: flex;
+  justify-content: flex-end; /* Pindahkan konten ke sebelah kanan */
+  align-items: center;
+  gap: 4rem;
+}
+
+.judul-text {
+  flex: 1;
+  max-width: 50%; /* Batasi lebar teks */
+  text-align: justify; /* Teks rata kiri */
+}
+
+.judul-text h2 {
+  font-size: 2.8rem;
+  color: var(--black); /* Warna teks putih */
+  margin-bottom: 1.5rem;
+}
+
+.judul-text p {
+  font-size: 1.5rem;
+  color: var(--black);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.judul-text .benefits li {
+  font-size: 2rem;
+  color: var(--black); /* Warna teks putih */
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.judul-text .benefits li i {
+  color: var(--yellow); /* Warna ikon kuning */
+  margin-right: 0.8rem;
+  font-size: 2rem;
+}
+
+.judul-text .btn {
+  background-color: var(--yellow);
+  color: var(--black);
+  padding: 1rem 2.5rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.judul-text .btn:hover {
+  background-color: var(--black);
+  color: var(--yellow);
+}
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Tukar Tambah Mobil Section Styling */
+.trade-in {
+  padding: 6rem 0;
+  background-color: #f9f9f9;
+}
+
+.trade-in .heading {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  color: var(--black);
+}
+
+.trade-in .heading span {
+  position: relative;
+  z-index: 0;
+}
+.trade-in .heading span::before {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--yellow);
+  clip-path: polygon(0 90%, 100% 80%, 100% 100%, 0% 100%);
+}
+
+.trade-in-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.trade-in-text {
+  flex: 1;
+}
+
+.trade-in-text h2 {
+  font-size: 2.7rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.trade-in-text p {
+  font-size: 2rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.trade-in-text .benefits {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.trade-in-image {
+  flex: 1;
+  text-align: center;
+}
+
+.trade-in-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+/* Testimoni Pelanggan start */
+.testimonials {
+  width: 100%; /* Pastikan lebar section sesuai */
+  background: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  max-width: 1300px; /* Sesuaikan lebar card */
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Jarak antara gambar dan teks */
+}
+
+.testimonial-author img {
+  max-width: 500px; /* Sesuaikan ukuran gambar */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+  flex: 1; /* Teks akan mengambil sisa ruang yang tersedia */
+  text-align: left; /* Teks rata kiri */
+}
+
+.testimonial-text h1 {
+  font-size: 2.5rem; /* Sesuaikan ukuran font */
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+.testimonial-text p {
+  font-size: 2rem;
+  color: #666;
+}
+/* Testimoni Pelanggan end */
+.why-choose-us {
+  background-color: #f9f9f9;
+  padding: 6rem 0;
+}
+
+.why-choose-us .heading {
+  text-align: center;
+}
+
+.why-choose-us .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem; /* Tambahkan margin-bottom untuk merapikan paragraf */
+}
+
+.benefit-card i {
+  height: 6rem;
+  width: 6rem;
+  line-height: 6rem;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--black);
+  text-align: center;
+}
+.benefit-card h3 {
+  font-size: 2rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.benefit-card p {
+  font-size: 1.5rem;
+  color: var(--light-color);
+  text-align: center;
+}
+.steps {
+  padding: 6rem 0;
+  background-color: #fff;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.step-card {
+  text-align: center;
+  padding: 2rem;
+  background-image: linear-gradient(
+    to bottom,
+    #faf6e8,
+    #e8f3fd
+  ); /* Ganti warna background menjadi gradasi kuning ke biru */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--yellow);
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  border: 2px solid var(--black);
+  width: 4rem;
+  height: 4rem; /* Tambahkan height untuk membuat ukuran lingkaran */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+}
+
+.step-card h3 {
+  text-align: left;
+  font-size: 2rem;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.step-card p {
+  text-align: left;
+  font-size: 1.8rem;
+  color: var(--light-color);
+}
+.step-card li {
+  margin-top: 10px;
+  font-size: 1.8rem;
+  color: #444;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.step-card li i {
+  color: #21ab41;
+  margin-right: 0.8rem;
+  font-size: 1.8rem;
+}
+.faq {
+  padding: 6rem 0;
+  background-color: #fff;
+}
+
+.faq-item {
+  margin-bottom: 2rem;
+}
+
+.faq-item h3 {
+  font-size: 1.5rem;
+  color: var(--black);
+}
+
+.faq-item p {
+  font-size: 1.2rem;
+  color: var(--light-gray);
+}
+/* Footer  start */
+.footer {
+  background: #272d3c;
+}
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+.footer .box-container .box h3 {
+  color: var(--yellow);
+  font-size: 2.2rem;
+  padding: 1rem 0;
+}
+.footer .box-container .box a {
+  display: block;
+  color: white;
+  font-size: 1.4rem;
+  padding: 1rem 0;
+}
+.footer .box-container .box a i {
+  padding-right: 0.5rem;
+  color: var(--yellow);
+  transition: padding-right 0.3s ease, color 0.3s ease; /* Menambahkan transisi untuk padding dan warna */
+}
+.footer .box-container .box a:hover i {
+  padding-right: 2rem;
+}
+.footer .credit {
+  text-align: center;
+  border-top: var(--border);
+  padding: 1rem;
+  padding-top: 2.5rem;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.download-apps h3 {
+  border-top: 1px solid var(--light-color); /* Garis tipis di atas */
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.app-icons {
+  display: flex;
+  justify-content: flex-start; /* Mengatur ikon ke kiri */
+  gap: 2rem; /* Jarak antara ikon */
+}
+
+.app-icon {
+  display: flex;
+  flex-direction: column; /* Mengatur teks di atas gambar */
+  align-items: center; /* Menyelaraskan teks dan gambar di tengah */
+}
+
+.app-icons a img {
+  width: 150px; /* Atur lebar ikon sesuai kebutuhan */
+  transition: transform 0.3s ease; /* Transisi untuk efek hover */
+}
+
+.app-icons a:hover img {
+  transform: scale(1.1); /* Efek zoom saat hover */
+}
+.copyright {
+  font-size: 1rem; /* Ukuran font lebih kecil */
+  color: white; /* Warna teks */
+  text-align: left; /* Mengatur teks ke kiri */
+  margin-top: 1rem; /* Jarak atas dari elemen di atasnya */
+}
+.shopping-info {
+  font-size: 1.2rem; /* Ukuran font untuk teks informasi */
+  color: white; /* Warna teks */
+  margin-top: 1rem; /* Jarak atas dari elemen di atasnya */
+  text-align: left; /* Mengatur teks ke kiri */
+}
+.shopping-info a {
+  color: #1976b6;
+}
+.shopping-info a:hover {
+  text-decoration: underline;
+}
+.footer-links {
+  margin-top: 1rem; /* Jarak atas dari elemen di atasnya */
+  font-size: 1rem; /* Ukuran font untuk tautan */
+  color: var(--yellow); /* Warna teks */
+  text-align: left; /* Mengatur teks ke kiri */
+}
+
+.footer-links a {
+  color: white; /* Warna tautan */
+  text-decoration: none; /* Menghapus garis bawah pada tautan */
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* Menambahkan garis bawah saat hover */
+}
+
+/* Footer  end */
+/* Media Queries */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 2rem;
+  }
+  .header.active {
+    padding: 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  #menu-btn {
+    display: block;
+  }
+  #menu-btn.fa-times {
+    transform: rotate(180deg);
+  }
+  .header #login-btn i {
+    display: block;
+  }
+  .header #login-btn .btn {
+    display: none;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: var(--border);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .header .navbar a {
+    display: block;
+    margin: 2rem;
+    font-size: 2rem;
+  }
+}
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}

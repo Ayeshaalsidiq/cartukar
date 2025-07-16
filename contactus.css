@@ -1,0 +1,650 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --yellow: #fdcf33;
+  --light-yellow: #ffee80;
+  --black: #130f40;
+  --light-color: #666;
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transform: all 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: auto;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+section {
+  padding: 2rem 9%;
+}
+.heading {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-size: 4.5rem;
+  color: var(--black);
+}
+
+.heading span {
+  position: relative;
+  z-index: 0;
+}
+.heading span::before {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--yellow);
+  clip-path: polygon(0 90%, 100% 80%, 100% 100%, 0% 100%);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 500;
+  font-size: 1.7rem;
+  cursor: pointer;
+  padding: 0.5rem 2.5rem;
+}
+.btn:hover {
+  background: var(--light-yellow);
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 9%;
+}
+.header .logo {
+  font-size: 2.5rem;
+  color: var(--black);
+  font-weight: bolder;
+}
+.header .logo span {
+  color: var(--yellow);
+}
+/* Navbar Styles */
+.header .navbar {
+  display: flex; /* Use flexbox for horizontal layout */
+  align-items: center; /* Center items vertically */
+  margin-right: 40rem;
+}
+
+.header .navbar a {
+  font-weight: bold;
+  font-size: 1.7rem; /* Font size for links */
+  margin: 0 1rem; /* Margin between links */
+  color: var(--black); /* Text color */
+  position: relative; /* Ensure positioning context for dropdown */
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative; /* Set the parent to relative positioning */
+}
+.dropdown i {
+  margin-right: 2.3rem;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  display: none; /* Hide the dropdown by default */
+  position: absolute; /* Position it below the link */
+  top: 100%; /* Position it directly below the link */
+  left: 0rem; /* Align it to the left of the parent */
+  background-color: #fff; /* Background color */
+  box-shadow: var(--box-shadow); /* Add shadow for better visibility */
+  border-radius: 0.5rem; /* Rounded corners */
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: 200px; /* Set a fixed width for the dropdown */
+}
+
+.dropdown-menu a {
+  display: block; /* Make links block elements */
+  padding: 1.5rem; /* Increase padding for more clickable area */
+  color: var(--black); /* Text color */
+  text-decoration: none; /* Remove underline */
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--light-yellow); /* Change background on hover */
+}
+
+/* Show dropdown when hovering over the About link or the dropdown menu */
+.dropdown:hover .dropdown-menu {
+  display: block; /* Show the dropdown when hovering over the dropdown */
+}
+/* Dropdown Item Styles */
+.dropdown-menu a {
+  display: block; /* Make links block elements */
+  padding: 1rem; /* Add padding for clickable area */
+  color: var(--black); /* Text color */
+  text-decoration: none; /* Remove underline */
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--box-shadow); /* Change background on hover */
+}
+.header .navbar a:hover {
+  color: var(--yellow);
+}
+.header .btn {
+  margin-top: 0;
+}
+.header #login-btn i {
+  font-size: 2.5rem;
+  color: var(--light-yellow);
+  cursor: pointer;
+  display: none;
+}
+#menu-btn {
+  font-size: 2.5rem;
+  color: var(--light-color);
+  cursor: pointer;
+  display: none;
+}
+.header.active {
+  box-shadow: var(--box-shadow);
+  padding: 2rem 9%;
+}
+
+/* Login */
+.login-form-container {
+  position: fixed;
+  top: -105%;
+  left: 0;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.login-form-container.active {
+  top: 0;
+  opacity: 1;
+}
+.login-form-container form {
+  padding: 2rem;
+  margin: 2rem;
+  width: 40rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  background: #fff;
+  text-align: center;
+}
+.login-form-container form .buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.login-form-container form .btn {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.login-form-container form h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+}
+.login-form-container form .box {
+  border: 1px solid var(--light-color);
+  border-radius: 0.5rem;
+  margin: 0.7rem 0;
+  width: 100%;
+  text-transform: none;
+  color: var(--black);
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+}
+.login-form-container form p {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  color: var(--light-color);
+}
+.login-form-container form p a {
+  color: var(--yellow);
+  text-decoration: underline;
+}
+.login-form-container #close-login-form {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 5rem;
+  color: var(--black);
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* Custom Layout Styling */
+.contact-us {
+  padding: 10rem 8% 10rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Kotak Horizontal */
+.horizontal-boxes {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.horizontal-boxes .box {
+  flex: 1;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Kotak Vertikal */
+.vertical-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.vertical-boxes .box {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Kotak Memanjang di Bawah */
+.long-box {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Gaya untuk Ikon */
+/* Gaya untuk Ikon dengan Lingkaran Border */
+.box i {
+  font-size: 2rem; /* Ukuran ikon */
+  color: var(--black); /* Warna ikon */
+  background-color: var(--yellow); /* Warna latar belakang lingkaran */
+  border: 2px solid var(--yellow); /* Border lingkaran */
+  border-radius: 50%; /* Membuat bentuk lingkaran */
+  padding: 1rem; /* Jarak antara ikon dan border */
+  display: inline-flex; /* Mengatur ikon di tengah lingkaran */
+  align-items: center; /* Pusatkan vertikal */
+  justify-content: center; /* Pusatkan horizontal */
+  width: 50px; /* Lebar lingkaran */
+  height: 50px; /* Tinggi lingkaran */
+  margin-bottom: 1rem; /* Jarak bawah */
+}
+
+/* Gaya untuk Kotak Vertikal */
+.box h3 {
+  font-size: 2rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.box p {
+  font-size: 1.4rem;
+  color: var(--light-color);
+  margin-bottom: 0.5rem;
+}
+
+.box strong {
+  color: var(--black);
+  font-weight: 600;
+}
+
+.box a {
+  color: blue;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.box a:hover {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+/* Gaya untuk QR Code dan Teks */
+.qr-content {
+  display: flex;
+  align-items: center; /* Pusatkan vertikal */
+  gap: 1rem; /* Jarak antara QR Code dan teks */
+}
+
+.qr-code {
+  width: 80px; /* Sesuaikan ukuran QR Code */
+  height: auto; /* Pertahankan rasio aspek */
+  border-radius: 0.5rem; /* Sudut membulat */
+  transform: translateX(99px); /* Geser gambar QR ke kanan */
+}
+
+.qr-text {
+  flex: 1; /* Teks mengambil sisa ruang */
+}
+/* Gaya untuk Kotak Memanjang */
+.long-box {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 2rem; /* Jarak atas dari elemen sebelumnya */
+}
+
+.long-box i {
+  font-size: 2rem; /* Ukuran ikon */
+  color: var(--black); /* Warna ikon */
+  background-color: var(--yellow); /* Warna latar belakang lingkaran */
+  border: 2px solid var(--yellow); /* Border lingkaran */
+  border-radius: 50%; /* Membuat bentuk lingkaran */
+  padding: 1rem; /* Jarak antara ikon dan border */
+  display: inline-flex; /* Mengatur ikon di tengah lingkaran */
+  align-items: center; /* Pusatkan vertikal */
+  justify-content: center; /* Pusatkan horizontal */
+  width: 50px; /* Lebar lingkaran */
+  height: 50px; /* Tinggi lingkaran */
+  margin-bottom: 1rem; /* Jarak bawah */
+}
+
+.long-box h3 {
+  font-size: 2rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.long-box p {
+  font-size: 1.4rem;
+  color: var(--light-color);
+  margin-bottom: 0.5rem;
+}
+
+.long-box strong {
+  color: var(--black);
+  font-weight: 600;
+}
+
+.long-box a {
+  color: blue;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.long-box a:hover {
+  color: var(--black);
+  text-decoration: underline;
+}
+.divider {
+  width: 100px; /* Lebar garis */
+  height: 3px; /* Ketebalan garis */
+  background-color: var(--yellow); /* Warna garis */
+  margin: 1rem auto; /* Jarak atas dan bawah, serta pusatkan */
+}
+/* Footer  start */
+.footer {
+  background: #272d3c;
+}
+.footer .boxes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+.footer .boxes-container .boxes h3 {
+  color: var(--yellow);
+  font-size: 2.2rem;
+  padding: 1rem 0;
+}
+.footer .boxes-container .boxes a {
+  display: block;
+  color: white;
+  font-size: 1.4rem;
+  padding: 1rem 0;
+}
+.footer .boxes-container .boxes a i {
+  padding-right: 0.5rem;
+  color: var(--yellow);
+  transition: padding-right 0.3s ease, color 0.3s ease; /* Menambahkan transisi untuk padding dan warna */
+}
+.footer .boxes-container .boxes a:hover i {
+  padding-right: 2rem;
+}
+.footer .credit {
+  text-align: center;
+  border-top: var(--border);
+  padding: 1rem;
+  padding-top: 2.5rem;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.download-apps h3 {
+  border-top: 1px solid var(--light-color); /* Garis tipis di atas */
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.app-icons {
+  display: flex;
+  justify-content: flex-start; /* Mengatur ikon ke kiri */
+  gap: 2rem; /* Jarak antara ikon */
+}
+
+.app-icon {
+  display: flex;
+  flex-direction: column; /* Mengatur teks di atas gambar */
+  align-items: center; /* Menyelaraskan teks dan gambar di tengah */
+}
+
+.app-icons a img {
+  width: 150px; /* Atur lebar ikon sesuai kebutuhan */
+  transition: transform 0.3s ease; /* Transisi untuk efek hover */
+}
+
+.app-icons a:hover img {
+  transform: scale(1.1); /* Efek zoom saat hover */
+}
+.copyright {
+  font-size: 1rem; /* Ukuran font lebih kecil */
+  color: white; /* Warna teks */
+  text-align: left; /* Mengatur teks ke kiri */
+  margin-top: 1rem; /* Jarak atas dari elemen di atasnya */
+}
+.shopping-info {
+  font-size: 1.2rem; /* Ukuran font untuk teks informasi */
+  color: white; /* Warna teks */
+  margin-top: 1rem; /* Jarak atas dari elemen di atasnya */
+  text-align: left; /* Mengatur teks ke kiri */
+}
+.shopping-info a {
+  color: #1976b6;
+}
+.shopping-info a:hover {
+  text-decoration: underline;
+}
+.footer-links {
+  margin-top: 1rem; /* Jarak atas dari elemen di atasnya */
+  font-size: 1rem; /* Ukuran font untuk tautan */
+  color: white; /* Warna teks */
+  text-align: left; /* Mengatur teks ke kiri */
+}
+
+.footer-links a {
+  color: white; /* Warna tautan */
+  text-decoration: none; /* Menghapus garis bawah pada tautan */
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* Menambahkan garis bawah saat hover */
+}
+/* footer end */
+
+/* Responsif untuk layar dengan lebar maksimum 991px */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%; /* Mengurangi ukuran font untuk layar lebih kecil */
+  }
+
+  .header {
+    padding: 2rem; /* Mengurangi padding header */
+  }
+
+  section {
+    padding: 2rem; /* Mengurangi padding section */
+  }
+
+  .experience-center,
+  .inspeksi {
+    flex-direction: column; /* Mengubah layout menjadi vertikal */
+    text-align: center; /* Pusatkan teks */
+  }
+
+  .experience-center img,
+  .inspeksi img {
+    max-width: 100%; /* Gambar mengambil lebar penuh */
+    margin-right: 0; /* Hapus margin kanan */
+    margin-bottom: 2rem; /* Tambahkan margin bawah */
+  }
+
+  .text-content,
+  .text-content-i {
+    max-width: 100%; /* Konten teks mengambil lebar penuh */
+  }
+
+  .map-banyak {
+    flex-direction: column; /* Mengubah layout menjadi vertikal */
+  }
+
+  .location-list,
+  .map-container {
+    width: 100%; /* Lebar penuh untuk daftar lokasi dan peta */
+    margin-right: 0; /* Hapus margin kanan */
+    margin-left: 0; /* Hapus margin kiri */
+  }
+  .qr-code {
+    width: 70px; /* Mengurangi ukuran QR Code */
+  }
+}
+
+/* Responsif untuk layar dengan lebar maksimum 768px */
+@media (max-width: 768px) {
+  html {
+    font-size: 50%; /* Mengurangi ukuran font lebih kecil lagi */
+  }
+
+  .header .navbar {
+    display: none; /* Sembunyikan navbar pada layar kecil */
+  }
+
+  #menu-btn {
+    display: inline-block; /* Tampilkan tombol menu */
+  }
+
+  .header.active .navbar {
+    display: flex; /* Tampilkan navbar saat aktif */
+    flex-direction: column; /* Layout vertikal untuk navbar */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+  }
+
+  .header.active .navbar a {
+    margin: 1rem 0; /* Jarak antar link navbar */
+  }
+
+  .experience-center img,
+  .inspeksi img {
+    max-width: 90%; /* Gambar mengambil 90% lebar */
+  }
+
+  .location-item {
+    padding: 0.5rem; /* Mengurangi padding item lokasi */
+  }
+
+  .location-item h3 {
+    font-size: 1.6rem; /* Mengurangi ukuran font judul lokasi */
+  }
+
+  .location-item p {
+    font-size: 1.2rem; /* Mengurangi ukuran font paragraf lokasi */
+  }
+  .qr-code {
+    width: 60px; /* Mengurangi ukuran QR Code lebih kecil lagi */
+  }
+}
+
+/* Responsif untuk layar dengan lebar maksimum 450px */
+@media (max-width: 450px) {
+  html {
+    font-size: 45%; /* Mengurangi ukuran font lebih kecil lagi */
+  }
+
+  .heading {
+    font-size: 3rem; /* Mengurangi ukuran font heading */
+  }
+
+  .experience-center img,
+  .inspeksi img {
+    max-width: 100%; /* Gambar mengambil lebar penuh */
+  }
+
+  .location-item {
+    padding: 0.5rem; /* Mengurangi padding item lokasi */
+  }
+
+  .location-item h3 {
+    font-size: 1.4rem; /* Mengurangi ukuran font judul lokasi */
+  }
+
+  .location-item p {
+    font-size: 1rem; /* Mengurangi ukuran font paragraf lokasi */
+  }
+
+  .btn {
+    padding: 0.5rem 1.5rem; /* Mengurangi padding tombol */
+    font-size: 1.4rem; /* Mengurangi ukuran font tombol */
+  }
+
+  .footer .box-container {
+    grid-template-columns: 1fr; /* Layout satu kolom untuk footer */
+  }
+  .qr-code {
+    width: 50px; /* Mengurangi ukuran QR Code untuk layar sangat kecil */
+  }
+}

@@ -1,0 +1,423 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --yellow: #fdcf33;
+  --light-yellow: #ffee80;
+  --black: #130f40;
+  --light-color: #666;
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transform: all 0.2s linear;
+}
+html {
+  font-size: 62.5%;
+  overflow: auto;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+section {
+  padding: 2rem 9%;
+}
+.heading {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-size: 4.5rem;
+  color: var(--black);
+}
+.heading span {
+  position: relative;
+  z-index: 0;
+}
+.heading span::before {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--yellow);
+  clip-path: polygon(0 90%, 100% 80%, 100% 100%, 0% 100%);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 500;
+  font-size: 1.7rem;
+  cursor: pointer;
+  padding: 0.5rem 2.5rem;
+}
+.btn:hover {
+  background: var(--light-yellow);
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 9%;
+}
+.header .logo {
+  font-size: 2.5rem;
+  color: var(--black);
+  font-weight: bolder;
+}
+.header .logo span {
+  color: var(--yellow);
+}
+/* Navbar Styles */
+.header .navbar {
+  display: flex; /* Use flexbox for horizontal layout */
+  align-items: center; /* Center items vertically */
+}
+
+.header .navbar a {
+  font-size: 1.7rem; /* Font size for links */
+  margin: 0 1rem; /* Margin between links */
+  color: var(--black); /* Text color */
+  position: relative; /* Ensure positioning context for dropdown */
+}
+
+/* Dropdown Styles */
+/* Dropdown Styles */
+.dropdown {
+  position: relative; /* Set the parent to relative positioning */
+}
+
+.dropdown-menu {
+  display: none; /* Hide the dropdown by default */
+  position: absolute; /* Position it below the link */
+  top: 100%; /* Position it directly below the link */
+  left: 0; /* Align it to the left of the parent */
+  background-color: #fff; /* Background color */
+  box-shadow: var(--box-shadow); /* Add shadow for better visibility */
+  border-radius: 0.5rem; /* Rounded corners */
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: 200px; /* Set a fixed width for the dropdown */
+}
+
+.dropdown-menu a {
+  display: block; /* Make links block elements */
+  padding: 1.5rem; /* Increase padding for more clickable area */
+  color: var(--black); /* Text color */
+  text-decoration: none; /* Remove underline */
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--light-yellow); /* Change background on hover */
+}
+
+/* Show dropdown when hovering over the About link or the dropdown menu */
+.dropdown:hover .dropdown-menu {
+  display: block; /* Show the dropdown when hovering over the dropdown */
+}
+/* Dropdown Item Styles */
+.dropdown-menu a {
+  display: block; /* Make links block elements */
+  padding: 1rem; /* Add padding for clickable area */
+  color: var(--black); /* Text color */
+  text-decoration: none; /* Remove underline */
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--box-shadow); /* Change background on hover */
+}
+.header .navbar a:hover {
+  color: var(--yellow);
+}
+.header .btn {
+  margin-top: 0;
+}
+.header #login-btn i {
+  font-size: 2.5rem;
+  color: var(--light-yellow);
+  cursor: pointer;
+  display: none;
+}
+#menu-btn {
+  font-size: 2.5rem;
+  color: var(--light-color);
+  cursor: pointer;
+  display: none;
+}
+.header.active {
+  box-shadow: var(--box-shadow);
+  padding: 2rem 9%;
+}
+
+/* Login */
+.login-form-container {
+  position: fixed;
+  top: -105%;
+  left: 0;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.login-form-container.active {
+  top: 0;
+  opacity: 1;
+}
+.login-form-container form {
+  padding: 2rem;
+  margin: 2rem;
+  width: 40rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  background: #fff;
+  text-align: center;
+}
+.login-form-container form .buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.login-form-container form .btn {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.login-form-container form h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+}
+.login-form-container form .box {
+  border: 1px solid var(--light-color);
+  border-radius: 0.5rem;
+  margin: 0.7rem 0;
+  width: 100%;
+  text-transform: none;
+  color: var(--black);
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+}
+.login-form-container form p {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  color: var(--light-color);
+}
+.login-form-container form p a {
+  color: var(--yellow);
+  text-decoration: underline;
+}
+.login-form-container #close-login-form {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 5rem;
+  color: var(--black);
+  cursor: pointer;
+  opacity: 1;
+}
+/* Checkout section start */
+.checkout {
+  margin-top: 50px;
+  padding: 50px 0;
+}
+
+.checkout .heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.checkout .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout .order-summary {
+  margin-bottom: 20px;
+}
+
+.checkout .order-summary h2 {
+  margin-top: 0;
+}
+
+.checkout .summary-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout .car-details {
+  display: flex;
+  align-items: center;
+}
+
+.checkout .car-details img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.checkout .car-info {
+  font-size: 18px;
+}
+
+.checkout .price-breakdown {
+  font-size: 16px;
+}
+
+.checkout .price-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout .total {
+  font-weight: bold;
+}
+
+.checkout .discount-code {
+  margin-top: 20px;
+}
+
+.checkout .discount-code input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.checkout .payment-shipping {
+  margin-top: 20px;
+}
+
+.checkout .shipping-details,
+.checkout .payment-details {
+  margin-bottom: 20px;
+}
+
+.checkout .form-group {
+  margin-bottom: 20px;
+}
+
+.checkout .form-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.checkout .form-group input[type="text"],
+.checkout .form-group select {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.checkout .btn {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout .btn:hover {
+  background-color: #388e3c;
+}
+.form-group {
+  position: relative; /* Set position relative for absolute positioning of icons */
+  margin-bottom: 1.5rem; /* Space between form groups */
+}
+
+.form-group label {
+  display: flex; /* Use flexbox for label and icon alignment */
+  align-items: center; /* Center items vertically */
+}
+
+.form-group label i {
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 0.5rem; /* Space between icon and label text */
+  color: var(--black); /* Icon color */
+  font-size: 1.5rem; /* Icon size */
+}
+
+input[type="text"],
+select {
+  padding-left: 3rem; /* Space for the icon */
+  padding-right: 1rem; /* Space for right padding */
+  border: 1px solid var(--light-color); /* Border style */
+  border-radius: 0.5rem; /* Rounded corners */
+  width: 100%; /* Full width */
+  font-size: 1.6rem; /* Font size */
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: var(--yellow); /* Change border color on focus */
+  outline: none; /* Remove outline */
+}
+.price-item.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  color: var(--black);
+  font-weight: bold;
+  border-top: 1px solid var(--light-color);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.price-item.total span:first-child {
+  margin-right: 20px; /* Jarak antara "Total" dan harganya */
+}
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  background-color: #4caf50; /* Warna hijau */
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
