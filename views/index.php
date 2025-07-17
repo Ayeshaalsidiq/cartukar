@@ -7,7 +7,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 $halaman_konten = "pages/$page.php";
 
 // 3. Panggil file header.php
-include 'header.php';
+include '../views/header.php';
 
 // 4. Cek jika file kontennya ada, lalu masukkan. Jika tidak, tampilkan halaman 404.
 if (file_exists($halaman_konten)) {
