@@ -76,8 +76,9 @@
             <div class="action-item-login">
                 <?php if (isset($_SESSION['user_id'])): ?>
 
-                    <a href="index.php?page=profile" class="action-item">
-                        <i class="fas fa-user-circle"></i> </a>
+                    <a href="index.php?page=profile" class="action-item" id="user-menu-trigger">
+                        <i class="fas fa-user-circle"></i>
+                    </a>
 
                     <div class="dropdown-menu user-dropdown">
                         <a href="index.php?page=profile">Akun Saya</a>

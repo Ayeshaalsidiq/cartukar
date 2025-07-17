@@ -33,6 +33,31 @@ dropdownTriggers.forEach((trigger) => {
   };
 });
 
+// --- Fungsi untuk Dropdown Menu User (On Click) ---
+const userMenuTrigger = document.querySelector("#user-menu-trigger");
+const userDropdown = document.querySelector(".user-dropdown");
+
+if (userMenuTrigger && userDropdown) {
+  // Saat ikon profil di-klik
+  userMenuTrigger.addEventListener("click", (event) => {
+    // Mencegah link langsung pindah halaman
+    event.preventDefault();
+    // Toggle (memunculkan/menyembunyikan) menu
+    userDropdown.classList.toggle("active");
+  });
+
+  // Logika untuk menutup dropdown saat klik di luar area menu
+  window.addEventListener("click", (event) => {
+    // Cek jika yang diklik BUKAN ikon trigger DAN BUKAN bagian dari dropdown itu sendiri
+    if (
+      !userMenuTrigger.contains(event.target) &&
+      !userDropdown.contains(event.target)
+    ) {
+      userDropdown.classList.remove("active");
+    }
+  });
+}
+
 // Fungsi untuk menghilangkan menu saat window di-scroll
 window.onscroll = () => {
   if (menuBtn && mainNav) {
@@ -147,6 +172,7 @@ tabs.forEach((tab) => {
     target.classList.add("active");
   });
 });
+
 // --- Fungsi untuk Tab di Halaman Login/Registrasi ---
 const loginTabs = document.querySelectorAll(".tab-btn");
 const formBoxes = document.querySelectorAll(".form-box");

@@ -1038,8 +1038,8 @@ section {
 }
 
 /* Dropdown untuk menu user */
-.action-item-login:hover .user-dropdown {
-  display: block; /* Tampilkan dropdown saat di-hover */
+.user-dropdown.active {
+  display: block;
 }
 
 .user-dropdown {
@@ -1160,10 +1160,6 @@ section {
   margin-top: 1rem;
   font-size: 1.8rem;
 }
-/* ==============================================
-   PERBAIKAN UNTUK FORM REGISTRASI
-   ============================================== */
-
 /* Style untuk kolom Alamat (textarea) agar sama dengan input lain */
 .input-group textarea {
   width: 100%;
