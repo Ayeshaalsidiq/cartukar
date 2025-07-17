@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="FAQ.css" />
 <?php
 // Panggil file header.php
 include 'pages/header.php';
 ?>
+<link rel="stylesheet" href="FAQ.css" />
 
 <body>
   <!-- FAQ Section Start -->

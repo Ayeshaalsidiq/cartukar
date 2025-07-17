@@ -1,13 +1,12 @@
 // Ambil elemen dari HTML
 const menuBtn = document.querySelector("#menu-btn");
-const navbar = document.querySelector(".header .navbar");
-const header = document.querySelector(".header");
+const mainNav = document.querySelector(".main-nav"); // GANTI DARI .navbar MENJADI .main-nav
 
-// --- Fungsi untuk Menu Hamburger Utama ---
-if (menuBtn && navbar) {
+// Fungsi saat menu hamburger di-klik
+if (menuBtn && mainNav) {
   menuBtn.onclick = () => {
     menuBtn.classList.toggle("fa-times");
-    navbar.classList.toggle("active");
+    mainNav.classList.toggle("active");
   };
 }
 
@@ -36,9 +35,9 @@ dropdownTriggers.forEach((trigger) => {
 
 // Fungsi untuk menghilangkan menu saat window di-scroll
 window.onscroll = () => {
-  if (menuBtn && navbar) {
+  if (menuBtn && mainNav) {
     menuBtn.classList.remove("fa-times");
-    navbar.classList.remove("active");
+    mainNav.classList.remove("active");
   }
 
   // Beri bayangan pada header saat di-scroll
@@ -130,4 +129,40 @@ var swiperReviews = new Swiper(".reviews-slider", {
     768: { slidesPerView: 2 },
     991: { slidesPerView: 3 },
   },
+});
+
+// --- Fungsi untuk Tab di Section "How It Works" ---
+const tabs = document.querySelectorAll(".tab-button");
+const tabPanes = document.querySelectorAll(".tab-pane");
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    // Hapus kelas 'active' dari semua tombol dan konten
+    tabs.forEach((item) => item.classList.remove("active"));
+    tabPanes.forEach((pane) => pane.classList.remove("active"));
+
+    // Tambahkan kelas 'active' ke tombol yang diklik dan konten yang sesuai
+    const target = document.querySelector(tab.dataset.target);
+    tab.classList.add("active");
+    target.classList.add("active");
+  });
+});
+// --- Fungsi untuk Tab di Halaman Login/Registrasi ---
+const loginTabs = document.querySelectorAll(".tab-btn");
+const formBoxes = document.querySelectorAll(".form-box");
+
+loginTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    // Hapus kelas 'active' dari semua tombol dan form
+    loginTabs.forEach((item) => item.classList.remove("active"));
+    formBoxes.forEach((box) => box.classList.remove("active"));
+
+    // Tambahkan kelas 'active' ke tombol yang diklik
+    tab.classList.add("active");
+
+    // Tampilkan form yang sesuai dengan data-form dari tombol
+    const formId = tab.dataset.form;
+    const targetForm = document.getElementById(formId + "-form");
+    targetForm.classList.add("active");
+  });
 });

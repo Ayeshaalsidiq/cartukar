@@ -1,24 +1,4 @@
-/* Variabel Warna & Global Reset (DIKEMBALIKAN KE VERSI AWAL) */
-:root {
-  --yellow: #fdcf33;
-  --light-yellow: #ffee80; /* Latar kuning pekat seperti awal */
-  --black: #130f40;
-  --light-color: #666;
-  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
-  --box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
-}
-
-* {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  text-decoration: none;
-  transition: all 0.2s linear;
-}
-
+/* CSS HALAMAN ADMIN */
 body {
   display: flex;
   min-height: 100vh;
