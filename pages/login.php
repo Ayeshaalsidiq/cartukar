@@ -5,7 +5,7 @@
             <button class="tab-btn" data-form="register">Daftar</button>
         </div>
 
-        <form id="login-form" class="form-box active" action="proses_login.php" method="POST">
+        <form id="login-form" class="form-box active" action="../proses_login.php" method="POST">
             <h2>Selamat Datang Kembali</h2>
             <div class="input-group">
                 <label for="login-email">Email</label>
@@ -21,7 +21,7 @@
             <button type="submit" class="btn">Masuk</button>
         </form>
 
-        <form id="register-form" class="form-box" action="proses_registrasi.php" method="POST">
+        <form id="register-form" class="form-box" action="../proses_registrasi.php" method="POST">
             <h2>Buat Akun Baru</h2>
 
             <div class="input-group">
@@ -57,4 +57,5 @@
             <button type="submit" class="btn">Daftar</button>
         </form>
     </div>
+
 </section>

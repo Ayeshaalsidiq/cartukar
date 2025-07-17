@@ -35,14 +35,14 @@
                 <a href="#">Lokasi Kami</a>
             </div>
             <div class="footer-column">
-                <h4>Tentang CARSOME</h4>
+                <h4>Tentang CARTUKAR</h4>
                 <a href="#">Tentang Kami</a>
-                <a href="#">Mobil Bekas CARSOME</a>
+                <a href="#">Mobil Bekas CARTUKAR</a>
                 <a href="#">Ulasan Mobil</a>
                 <a href="#">Pelaporan Pelanggaran</a>
                 <a href="#">Karir</a>
                 <a href="#">Semua Artikel</a>
-                <a href="#">CARSOME Academy</a>
+                <a href="#">CARTUKAR Academy</a>
             </div>
             <div class="footer-column">
                 <h4>Partner Websites</h4>
@@ -64,7 +64,7 @@
 
     <div class="footer-legal">
         <div class="footer-container legal-content">
-            <p>© 2016-2025 PT CAR TUKAR INDONESIA (0120102153901) Dilindungi oleh hak cipta. <a href="#">Kebijakan Privasi</a> | <a href="#">Syarat Penggunaan</a></p>
+            <p>© 2016-2025 PT CARTUKAR INDONESIA (0120102153901) Dilindungi oleh hak cipta. <a href="#">Kebijakan Privasi</a> | <a href="#">Syarat Penggunaan</a></p>
             <div class="country-selector">
                 <img src="assets/images/indonesia-flag.jpg" alt="Indonesia Flag">
                 <span>Indonesia</span>
@@ -74,8 +74,7 @@
     </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="assets/js/home.js"></script>
-
+<script src="../assets/js/home.js"></script>
 </body>
 
 </html>

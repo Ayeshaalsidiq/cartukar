@@ -4,7 +4,7 @@ session_start();
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 // 2. Buat path lengkap ke file konten yang ada di dalam folder 'pages'.
-$halaman_konten = "pages/$page.php";
+$halaman_konten = "../pages/$page.php";
 
 // 3. Panggil file header.php
 include 'header.php';
