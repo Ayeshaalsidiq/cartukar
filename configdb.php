@@ -1,7 +1,7 @@
 <?php
 // Database configuration
 $host = 'localhost';
-$dbname = 'nama data base kau';
+$dbname = 'cartukar_db';
 $username = 'root';
 $password = '';
 
