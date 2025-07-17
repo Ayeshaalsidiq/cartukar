@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['user_id'] = $new_user_id;
 
         // 3. Arahkan langsung ke halaman utama
-        header("Location: index.php");
+        header("Location: views/index.php");
         exit(); // Selalu gunakan exit() setelah header redirect
 
     } else {

@@ -891,8 +891,8 @@ section {
 }
 .mega-menu-content {
   display: grid;
-  grid-template-columns: 2fr 3fr 2fr;
-  gap: 3rem;
+  grid-template-columns: 2fr 3fr; /* <-- Jadi 2 kolom */
+  gap: 4rem; /* Jarak antar kolom disesuaikan */
 }
 .mega-menu-column {
   display: flex;
@@ -932,27 +932,6 @@ section {
 .brand-grid a {
   padding: 1rem 0;
 }
-
-.special-offer {
-  background-color: #f7f7f7;
-  padding: 1.5rem;
-  border-radius: 0.8rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.special-offer img {
-  height: 40px;
-  margin-bottom: 1rem;
-}
-.special-offer .btn {
-  margin-top: auto;
-  width: 100%;
-  padding: 1rem;
-}
-
 /* Aksi & Ikon (Kanan) */
 .header-group-right {
   gap: 1.5rem;
@@ -1038,8 +1017,8 @@ section {
 }
 
 /* Dropdown untuk menu user */
-.action-item-login:hover .user-dropdown {
-  display: block; /* Tampilkan dropdown saat di-hover */
+.user-dropdown.active {
+  display: block;
 }
 
 .user-dropdown {
@@ -1160,10 +1139,6 @@ section {
   margin-top: 1rem;
   font-size: 1.8rem;
 }
-/* ==============================================
-   PERBAIKAN UNTUK FORM REGISTRASI
-   ============================================== */
-
 /* Style untuk kolom Alamat (textarea) agar sama dengan input lain */
 .input-group textarea {
   width: 100%;
@@ -1192,6 +1167,7 @@ section {
 .input-group input[type="date"]:valid {
   color: var(--black);
 }
+
 /* ==============================================
    KONTEN HALAMAN: LOGIN & REGISTRASI
    ============================================== */

@@ -1,8 +1,8 @@
 <!-- Home Section Start -->
 <section class="home" id="home">
   <h1 class="home-parallax" data-speed="-2">Find your car</h1>
-  <img class="home-parallax" data-speed="5" src="assets/images/display.png" alt="" />
-  <a href="http://localhost/CARTUKAR/index.php?page=bekas" class="btn home-parallax" data-speed="7">Explore cars</a>
+  <img class="home-parallax" data-speed="5" src="../assets/images/display.png" alt="" />
+  <a href="http://localhost/CARTUKAR/views/index.php?page=bekas" class="btn home-parallax" data-speed="7">Explore cars</a>
 </section>
 <!-- Home Section End -->
 
@@ -45,7 +45,7 @@
   <div class="swiper vehicles-slider">
     <div class="swiper-wrapper">
       <div class="swiper-slide box">
-        <img src="assets/images/Civic.png" alt="" />
+        <img src="../assets/images/Civic.png" alt="" />
         <div class="content">
           <h3>New Model</h3>
           <div class="price"><span>Price: </span> $65000/-</div>
@@ -60,7 +60,7 @@
         </div>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/m3.png" alt="" />
+        <img src="../assets/images/m3.png" alt="" />
         <div class="content">
           <h3>New Model</h3>
           <div class="price"><span>Price: </span> $65000/-</div>
@@ -75,7 +75,7 @@
         </div>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/Civic.png" alt="" />
+        <img src="../assets/images/Civic.png" alt="" />
         <div class="content">
           <h3>New Model</h3>
           <div class="price"><span>Price: </span> $65000/-</div>
@@ -90,7 +90,7 @@
         </div>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/m3.png" alt="" />
+        <img src="../assets/images/m3.png" alt="" />
         <div class="content">
           <h3>New Model</h3>
           <div class="price"><span>Price: </span> $65000/-</div>
@@ -105,7 +105,7 @@
         </div>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/Civic.png" alt="" />
+        <img src="../assets/images/Civic.png" alt="" />
         <div class="content">
           <h3>New Model</h3>
           <div class="price"><span>Price: </span> $65000/-</div>
@@ -120,7 +120,7 @@
         </div>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/m3.png" alt="" />
+        <img src="../assets/images/m3.png" alt="" />
         <div class="content">
           <h3>New Model</h3>
           <div class="price"><span>Price: </span> $65000/-</div>
@@ -208,7 +208,7 @@
   <div class="swiper featured-slider">
     <div class="swiper-wrapper">
       <div class="swiper-slide box">
-        <img src="assets/images/merce.png" alt="" />
+        <img src="../assets/images/merce.png" alt="" />
         <h3>New model</h3>
         <div class="stars">
           <i class="fas fa-star"></i>
@@ -221,7 +221,7 @@
         <a href="#" class="btn">check out</a>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/mk5.png" alt="" />
+        <img src="../assets/images/mk5.png" alt="" />
         <h3>New model</h3>
         <div class="stars">
           <i class="fas fa-star"></i>
@@ -234,7 +234,7 @@
         <a href="#" class="btn">check out</a>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/mk4.png" alt="" />
+        <img src="../assets/images/mk4.png" alt="" />
         <h3>New model</h3>
         <div class="stars">
           <i class="fas fa-star"></i>
@@ -247,7 +247,7 @@
         <a href="#" class="btn">check out</a>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/rx7.png" alt="" />
+        <img src="../assets/images/rx7.png" alt="" />
         <h3>New model</h3>
         <div class="stars">
           <i class="fas fa-star"></i>
@@ -266,7 +266,7 @@
   <div class="swiper featured-slider">
     <div class="swiper-wrapper">
       <div class="swiper-slide box">
-        <img src="assets/images/gtr.png" alt="" />
+        <img src="../assets/images/gtr.png" alt="" />
         <h3>New model</h3>
         <div class="stars">
           <i class="fas fa-star"></i>
@@ -279,7 +279,7 @@
         <a href="#" class="btn">check out</a>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/r35.png" alt="" />
+        <img src="../assets/images/r35.png" alt="" />
         <h3>New model</h3>
         <div class="stars">
           <i class="fas fa-star"></i>
@@ -292,7 +292,7 @@
         <a href="#" class="btn">check out</a>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/Audi.png" alt="" />
+        <img src="../assets/images/Audi.png" alt="" />
         <h3>New model</h3>
         <div class="stars">
           <i class="fas fa-star"></i>
@@ -305,7 +305,7 @@
         <a href="#" class="btn">check out</a>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/veyron.png" alt="" />
+        <img src="../assets/images/veyron.png" alt="" />
         <h3>New model</h3>
         <div class="stars">
           <i class="fas fa-star"></i>
@@ -338,7 +338,7 @@
         <div class="step-card">
           <div class="step-icon"><i class="fas fa-search"></i></div>
           <h3>01. Cari Mobil Impianmu</h3>
-          <p>Pilih dari ribuan mobil CARSOME Certified berkualitas yang telah kami inspeksi secara menyeluruh.</p>
+          <p>Pilih dari ribuan mobil CARTUKAR Certified berkualitas yang telah kami inspeksi secara menyeluruh.</p>
           <a href="index.php?page=bekas" class="btn">Cari Mobil</a>
         </div>
         <div class="step-card">
@@ -390,7 +390,7 @@
         <div class="step-card">
           <div class="step-icon"><i class="fas fa-search-dollar"></i></div>
           <h3>01. Pilih Mobil Baru</h3>
-          <p>Cari dan pilih mobil impianmu dari koleksi CARSOME Certified yang tersedia di website kami.</p>
+          <p>Cari dan pilih mobil impianmu dari koleksi CARTUKAR Certified yang tersedia di website kami.</p>
           <a href="index.php?page=tukar" class="btn">Tukar Tambah</a>
 
         </div>
@@ -419,7 +419,7 @@
   <div class="swiper reviews-slider">
     <div class="swiper-wrapper">
       <div class="swiper-slide box">
-        <img src="assets/images/Chico lachowski icon, pfp_.jpeg" alt="" />
+        <img src="../assets/images/Chico lachowski icon, pfp_.jpeg" alt="" />
         <div class="content">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
@@ -437,7 +437,7 @@
         </div>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/bsmoke.jpeg" alt="" />
+        <img src="../assets/images/bsmoke.jpeg" alt="" />
         <div class="content">
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non,
@@ -455,7 +455,7 @@
         </div>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/cr7.jpeg" alt="" />
+        <img src="../assets/images/cr7.jpeg" alt="" />
         <div class="content">
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est
@@ -473,7 +473,7 @@
         </div>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/ishowspeed can i have some robux (2).jpeg" alt="" />
+        <img src="../assets/images/ishowspeed can i have some robux (2).jpeg" alt="" />
         <div class="content">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -491,7 +491,7 @@
         </div>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/mr.beast.jpeg" alt="" />
+        <img src="../assets/images/mr.beast.jpeg" alt="" />
         <div class="content">
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea
@@ -508,7 +508,7 @@
         </div>
       </div>
       <div class="swiper-slide box">
-        <img src="assets/images/mrs puff.jpeg" alt="" />
+        <img src="../assets/images/mrs puff.jpeg" alt="" />
         <div class="content">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab

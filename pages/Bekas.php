@@ -41,7 +41,7 @@
     <div class="car-grid">
       <div class="car-card">
         <div class="card-image">
-          <img src="assets/images/creta.png" alt="Hyundai Creta">
+          <img src="../assets/images/creta.png" alt="Hyundai Creta">
           <div class="certified-badge">CARSOME Certified</div>
         </div>
         <div class="card-content">
@@ -64,7 +64,7 @@
 
       <div class="car-card">
         <div class="card-image">
-          <img src="assets/images/ertiga.png" alt="Suzuki Ertiga">
+          <img src="../assets/images/ertiga.png" alt="Suzuki Ertiga">
           <div class="promo-badge">PROMO KILAT</div>
         </div>
         <div class="card-content">
@@ -87,7 +87,7 @@
 
       <div class="car-card">
         <div class="card-image">
-          <img src="assets/images/crv.png" alt="Honda CR-V">
+          <img src="../assets/images/crv.png" alt="Honda CR-V">
           <div class="certified-badge">CARSOME Value</div>
         </div>
         <div class="card-content">
@@ -110,7 +110,7 @@
 
       <div class="car-card">
         <div class="card-image">
-          <img src="assets/images/hyundai.png" alt="Toyota Avanza">
+          <img src="../assets/images/hyundai.png" alt="Toyota Avanza">
           <div class="certified-badge">CARSOME Certified</div>
         </div>
         <div class="card-content">
