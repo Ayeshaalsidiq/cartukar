@@ -192,3 +192,42 @@ loginTabs.forEach((tab) => {
     targetForm.classList.add("active");
   });
 });
+// GANTI FUNGSI LAMA DENGAN KODE INI
+// --- Fungsi untuk Galeri Gambar di Halaman Detail ---
+const mainImage = document.getElementById("main-car-image");
+const thumbnails = document.querySelectorAll(".thumb");
+
+// Cek apakah elemennya ada di halaman ini
+if (mainImage && thumbnails.length > 0) {
+  thumbnails.forEach((thumb) => {
+    // Tambahkan 'pendengar' klik ke setiap gambar kecil
+    thumb.addEventListener("click", function () {
+      // Hapus kelas 'active' dari semua thumbnail
+      thumbnails.forEach((item) => item.classList.remove("active"));
+
+      // Tambahkan kelas 'active' ke thumbnail yang baru saja diklik
+      this.classList.add("active");
+
+      // Ganti sumber (src) dari gambar utama dengan sumber thumbnail yang diklik
+      mainImage.src = this.src;
+    });
+  });
+}
+// --- Fungsi untuk Tab di Section Spesifikasi ---
+const specTabs = document.querySelectorAll(".spec-tabs .tab-button");
+const specPanes = document.querySelectorAll(".spec-tab-content .tab-pane");
+
+specTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    // Hapus kelas 'active' dari semua tombol dan konten
+    specTabs.forEach((item) => item.classList.remove("active"));
+    specPanes.forEach((pane) => pane.classList.remove("active"));
+
+    // Tambahkan kelas 'active' ke tombol yang diklik dan konten yang sesuai
+    const target = document.querySelector(tab.dataset.target);
+    tab.classList.add("active");
+    if (target) {
+      target.classList.add("active");
+    }
+  });
+});

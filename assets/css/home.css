@@ -1173,6 +1173,164 @@ section {
    ============================================== */
 
 /* ==============================================
+   KONTEN HALAMAN: PROFIL PENGGUNA
+   ============================================== */
+.profile-page {
+  background-color: #f8f9fa;
+  min-height: 80vh;
+}
+
+.profile-header {
+  background-color: var(--yellow);
+  padding: 3rem 9%;
+  color: var(--black);
+}
+
+.profile-header .header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-header h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.profile-header .settings-btn i {
+  font-size: 2.4rem;
+  color: var(--black);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-header .settings-btn:hover i {
+  transform: rotate(90deg);
+}
+
+.profile-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  /* Posisikan agar sedikit menimpa header kuning */
+  margin-top: -40px;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-main-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.main-card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #555;
+  transition: color 0.2s;
+}
+.main-card-item:hover {
+  color: var(--black);
+}
+.main-card-item i {
+  font-size: 3rem;
+  color: var(--black);
+}
+
+.profile-link-list {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Agar border-bottom tidak keluar */
+}
+.profile-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--black);
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s;
+}
+.profile-list-item:last-child {
+  border-bottom: none;
+}
+.profile-list-item:hover {
+  background-color: #f7f7f7;
+}
+.item-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.item-icon-title i {
+  font-size: 2rem;
+  width: 25px; /* Beri lebar agar sejajar */
+  text-align: center;
+}
+
+/* ==============================================
+   KONTEN HALAMAN: PENGATURAN AKUN
+   ============================================== */
+.settings-page {
+  padding: 5rem 9%;
+  background-color: #f8f9fa;
+}
+
+.settings-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 4rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.settings-container h1 {
+  font-size: 3rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.settings-container p {
+  font-size: 1.6rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.settings-form .input-group {
+  margin-bottom: 2rem;
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border: 1px solid #c3e6cb;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+/* ==============================================
    KONTEN HALAMAN: BELI MOBIL (BEKAS.PHP)
    ============================================== */
 .car-listing-page {
@@ -1293,102 +1451,125 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
-.car-card {
+/* ==============================================
+   KONTEN HALAMAN: BELI MOBIL (BEKAS.PHP)
+   (Versi Kartu Modern - v2)
+   ============================================== */
+
+/* ... (CSS untuk .filter-container biarkan saja) ... */
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* KARTU MOBIL VERSI 2 (MODERN) */
+.car-card-v2 {
   background-color: #fff;
   border-radius: 0.8rem;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.car-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-.card-image {
-  position: relative;
-}
-.card-image img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.certified-badge,
-.promo-badge {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-  border-radius: 0.5rem;
-  color: #fff;
-}
-.certified-badge {
-  background-color: var(--yellow);
-  color: var(--black);
-}
-.promo-badge {
-  background-color: #e44d2e;
-}
-.card-content {
-  padding: 1.5rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-.car-title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--black);
-  margin-bottom: 1rem;
-  text-transform: none; /* Override global capitalize */
-}
-.price-section {
-  margin-bottom: 1rem;
-}
-.main-price {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--black);
-}
-.monthly-price {
-  font-size: 1.4rem;
-  color: #666;
-  margin-left: 1rem;
-}
-.specs-section {
-  display: flex;
-  gap: 1.5rem;
-  font-size: 1.3rem;
-  color: #666;
-  text-transform: none;
-  margin-top: auto;
-  padding-top: 1rem;
-}
-.card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-  border-top: 1px solid #f0f0f0;
-}
-.btn-compare {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #3b82f6;
-}
-.btn-wishlist i {
-  font-size: 2rem;
-  color: #999;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-.btn-wishlist i:hover {
-  color: #e44d2e;
+  text-decoration: none; /* Menghilangkan garis bawah dari link */
 }
 
+/* Area Gambar & Tombol Slider */
+.card-image-v2 {
+  position: relative;
+}
+.card-image-v2 img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.image-counter {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Konten & Detail di Bawah Gambar */
+.card-content-v2 {
+  padding: 1.5rem;
+}
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.card-badge img {
+  height: 16px;
+}
+.card-badge span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.car-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--black);
+  text-transform: none;
+}
+.btn-wishlist {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.btn-wishlist i {
+  font-size: 2.4rem;
+  color: #cbd5e1;
+}
+.btn-wishlist i.active,
+.btn-wishlist:hover i {
+  color: #ef4444;
+}
+.car-specs {
+  font-size: 1.4rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+.price-section-v2 {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1.5rem;
+  margin-top: auto; /* Mendorong harga ke bagian bawah kartu */
+}
+.price-section-v2 .main-price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ef4444;
+}
+.price-section-v2 .main-price i {
+  font-size: 1.4rem;
+  color: #999;
+  cursor: pointer;
+}
+.price-section-v2 .cash-price {
+  font-size: 1.5rem;
+  color: #666;
+}
+.price-section-v2 .cash-price s {
+  text-decoration: line-through;
+}
 /* Pagination */
 .pagination {
   display: flex;
@@ -1415,3 +1596,391 @@ section {
 /* ==============================================
    KONTEN HALAMAN: BELI MOBIL (BEKAS.PHP)
    ============================================== */
+
+/* ==============================================
+   KONTEN HALAMAN: DETAIL MOBIL
+   ============================================== */
+
+/* PASTIKAN BLOK INI ADA DI PALING ATAS */
+.car-detail-page {
+  padding: 4rem 0;
+  background-color: #fff;
+}
+
+/* KUNCI UTAMA LAYOUT: Grid 2 Kolom */
+.detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem; /* Beri padding di sini agar konten tidak menempel di tepi layar */
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Kolom Kiri: Galeri Gambar */
+.detail-gallery {
+  width: 100%;
+}
+.main-image {
+  position: relative;
+}
+.main-image img {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid #eee;
+  aspect-ratio: 4/3; /* Jaga rasio gambar */
+  object-fit: cover;
+}
+.main-image .image-counter {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+.thumbnail-images {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.thumb {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.thumb:hover,
+.thumb.active {
+  border-color: var(--yellow);
+}
+
+/* ==============================================
+   PERBAIKAN DETAIL INFO MOBIL
+   ============================================== */
+.detail-info {
+  position: relative;
+}
+.detail-info h1 {
+  font-size: 2.8rem;
+  color: var(--black);
+  margin: 1rem 0 0.5rem;
+  line-height: 1.3;
+}
+.title-wrapper-v2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.detail-info .car-specs-main {
+  font-size: 1.6rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+.detail-info .price-section-v2 {
+  border: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+.credit-simulation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.title-actions {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+/* Styling baru untuk Info Actions */
+.info-actions-v2 {
+  margin: 2rem 0;
+  border-top: 1px solid #eee;
+}
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--black);
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+.info-item:hover {
+  background-color: #f9f9f9;
+}
+.info-item i:first-child {
+  width: 25px;
+  font-size: 1.8rem;
+  color: #888;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+.info-item span {
+  flex-grow: 1;
+}
+.info-item.highlight {
+  background-color: #fffbe6; /* Background kuning muda */
+}
+
+/* Styling untuk bagian Expandable */
+.info-item.expandable .item-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+.info-item.expandable .expand-arrow {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+.info-item.expandable.active .expand-arrow {
+  transform: rotate(180deg);
+}
+.item-content {
+  display: none; /* Sembunyikan konten secara default */
+  padding: 1.5rem 1rem 1rem 5rem; /* Padding agar menjorok ke dalam */
+  font-size: 1.4rem;
+  color: #555;
+  background-color: #f9f9f9;
+}
+.item-content ul {
+  list-style: disc;
+  padding-left: 2rem;
+}
+.item-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* ... sisa CSS untuk tombol dan whatsapp ... */
+/* ==============================================
+   PERBAIKAN UNTUK TOMBOL PEMBELIAN
+   ============================================== */
+
+/* Wadah utama untuk ikon telepon dan tombol */
+.purchase-actions-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 3rem 0 1.5rem;
+}
+
+.action-icon {
+  font-size: 2.5rem;
+  color: #3b82f6; /* Warna biru */
+}
+
+/* Wadah untuk kedua tombol */
+.purchase-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Style dasar untuk tombol versi 2 */
+.btn.v2 {
+  display: flex;
+  flex-direction: column; /* Membuat teks jadi 2 baris */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 60px; /* Samakan tinggi tombol */
+}
+
+.btn.v2 strong {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.btn.v2 span {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Style spesifik untuk tombol */
+.btn-secondary.v2 {
+  background-color: #f0f5ff; /* Biru sangat muda */
+  color: #3b82f6; /* Biru */
+}
+.btn-secondary.v2 span {
+  color: #6b7280;
+}
+
+.btn-primary.v2 {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+.btn-primary.v2 span {
+  color: #555;
+}
+
+/* Efek hover */
+.btn-secondary.v2:hover {
+  background-color: #e0eaff;
+  transform: translateY(-2px);
+}
+.btn-primary.v2:hover {
+  background: #eab308;
+  transform: translateY(-2px);
+}
+
+/* Styling untuk link WhatsApp yang baru */
+.whatsapp-link-boxed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.5rem;
+  background-color: #f7f7f9;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  color: #666;
+  font-weight: 500;
+}
+.whatsapp-link-boxed i {
+  font-size: 2rem;
+  color: #25d366; /* Warna hijau WhatsApp */
+}
+.whatsapp-link-boxed strong {
+  color: var(--black);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .detail-container {
+    grid-template-columns: 1fr; /* Kolom jadi 1 di tablet/HP */
+  }
+}
+/* ==============================================
+   BAGIAN TAB SPESIFIKASI (VERSI PRESISI)
+   ============================================== */
+.detail-specs-section {
+  max-width: 1100px;
+  margin: 8rem auto 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Tombol Tab */
+.spec-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-bottom: 1px solid #e9ecef; /* Garis bawah abu-abu tipis */
+}
+.spec-tabs .tab-button {
+  padding: 1rem 0;
+  padding-bottom: 1.5rem;
+  margin-bottom: -1px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #6c757d; /* Warna abu-abu untuk tab non-aktif */
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+.spec-tabs .tab-button:hover {
+  color: var(--black);
+}
+.spec-tabs .tab-button.active {
+  border-bottom-color: var(--yellow);
+  color: var(--black);
+}
+
+/* Konten Tab */
+.spec-tab-content .tab-pane {
+  display: none;
+}
+.spec-tab-content .tab-pane.active {
+  display: block;
+}
+.spec-content-header {
+  text-align: center;
+  margin: 5rem 0;
+}
+.spec-content-header .title-decorator {
+  height: 4px;
+  width: 40px;
+  background-color: var(--yellow);
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+}
+.spec-content-header h2 {
+  font-size: 3.2rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+.spec-content-header p {
+  font-size: 1.6rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Grid Spesifikasi */
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 6rem;
+  padding: 3rem 4rem;
+  background-color: #fff;
+  border: 1px solid #e9ecef; /* Border soft */
+  border-radius: 1.2rem;
+}
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1.6rem;
+}
+/* Hapus border untuk 2 item terakhir agar rapi */
+.spec-item:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+.spec-item span {
+  color: #6c757d; /* Warna label (kiri) */
+  font-weight: 500;
+}
+.spec-item strong {
+  color: var(--black); /* Warna nilai (kanan) */
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .spec-grid {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+  /* Di mobile, hanya item terakhir yang tidak ada border */
+  .spec-item:nth-last-child(-n + 2) {
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .spec-item:last-child {
+    border-bottom: none;
+  }
+}

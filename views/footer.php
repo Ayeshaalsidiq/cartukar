@@ -56,8 +56,8 @@
         <div class="footer-bottom">
             <h4>Unduh Aplikasi</h4>
             <div class="app-buttons">
-                <a href="#"><img src="assets/images/app store.png" alt="Download on the App Store"></a>
-                <a href="#"><img src="assets/images/play store.png" alt="Get it on Google Play"></a>
+                <a href="#"><img src="../assets/images/app store.png" alt="Download on the App Store"></a>
+                <a href="#"><img src="../assets/images/play store.png" alt="Get it on Google Play"></a>
             </div>
         </div>
     </div>
@@ -66,7 +66,7 @@
         <div class="footer-container legal-content">
             <p>© 2016-2025 PT CARTUKAR INDONESIA (0120102153901) Dilindungi oleh hak cipta. <a href="#">Kebijakan Privasi</a> | <a href="#">Syarat Penggunaan</a></p>
             <div class="country-selector">
-                <img src="assets/images/indonesia-flag.jpg" alt="Indonesia Flag">
+                <img src="../assets/images/indonesia-flag.jpg" alt="Indonesia Flag">
                 <span>Indonesia</span>
                 <i class="fas fa-chevron-up"></i>
             </div>

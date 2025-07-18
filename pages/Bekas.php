@@ -39,105 +39,51 @@
     </div>
 
     <div class="car-grid">
-      <div class="car-card">
-        <div class="card-image">
-          <img src="../assets/images/creta.png" alt="Hyundai Creta">
-          <div class="certified-badge">CARSOME Certified</div>
-        </div>
-        <div class="card-content">
-          <h4 class="car-title">2022 Hyundai CRETA PRIME 1.5</h4>
-          <div class="price-section">
-            <span class="main-price">Rp 365 Juta</span>
-            <span class="monthly-price">Rp 8,17 Jt/bln</span>
-          </div>
-          <div class="specs-section">
-            <span>38.688 km</span>
-            <span>Automatic</span>
-            <span>Jakarta Utara</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn-compare">Bandingkan</a>
-          <a href="#" class="btn-wishlist"><i class="far fa-heart"></i></a>
-        </div>
-      </div>
+      <?php
+      // 1. KONEKSI KE DATABASE
+      $koneksi = new mysqli('localhost', 'root', '', 'cartukar_db');
+      if ($koneksi->connect_error) {
+        die("Koneksi gagal: " . $koneksi->connect_error);
+      }
 
-      <div class="car-card">
-        <div class="card-image">
-          <img src="../assets/images/ertiga.png" alt="Suzuki Ertiga">
-          <div class="promo-badge">PROMO KILAT</div>
-        </div>
-        <div class="card-content">
-          <h4 class="car-title">2022 Suzuki ERTIGA GX HYBRID 1.5</h4>
-          <div class="price-section">
-            <span class="main-price">Rp 210 Juta</span>
-            <span class="monthly-price">Rp 4,70 Jt/bln</span>
-          </div>
-          <div class="specs-section">
-            <span>19.120 km</span>
-            <span>Automatic</span>
-            <span>Jakarta Utara</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn-compare">Bandingkan</a>
-          <a href="#" class="btn-wishlist"><i class="far fa-heart"></i></a>
-        </div>
-      </div>
+      // 2. QUERY UNTUK MENGAMBIL SEMUA DATA MOBIL
+      $sql = "SELECT * FROM mobil ORDER BY id DESC";
+      $result = $koneksi->query($sql);
 
-      <div class="car-card">
-        <div class="card-image">
-          <img src="../assets/images/crv.png" alt="Honda CR-V">
-          <div class="certified-badge">CARSOME Value</div>
-        </div>
-        <div class="card-content">
-          <h4 class="car-title">2018 Honda CR-V TURBO PRESTIGE 1.5</h4>
-          <div class="price-section">
-            <span class="main-price">Rp 370 Juta</span>
-            <span class="monthly-price">Rp 8,28 Jt/bln</span>
-          </div>
-          <div class="specs-section">
-            <span>76.718 km</span>
-            <span>Automatic</span>
-            <span>Jakarta Utara</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn-compare">Bandingkan</a>
-          <a href="#" class="btn-wishlist"><i class="far fa-heart"></i></a>
-        </div>
-      </div>
+      // 3. LAKUKAN PERULANGAN UNTUK MENAMPILKAN SETIAP MOBIL
+      if ($result->num_rows > 0) {
+        while ($mobil = $result->fetch_assoc()) {
+      ?>
 
-      <div class="car-card">
-        <div class="card-image">
-          <img src="../assets/images/hyundai.png" alt="Toyota Avanza">
-          <div class="certified-badge">CARSOME Certified</div>
-        </div>
-        <div class="card-content">
-          <h4 class="car-title"> 2023 Hyundai CRETA PRIME 1.5</h4>
-          <div class="price-section">
-            <span class="main-price">Rp 290 Juta</span>
-            <span class="monthly-price">Rp 4,55 Jt/bln</span>
-          </div>
-          <div class="specs-section">
-            <span>73.182 km</span>
-            <span>Automatic</span>
-            <span>Jakarta Selatan</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn-compare">Bandingkan</a>
-          <a href="#" class="btn-wishlist"><i class="far fa-heart"></i></a>
-        </div>
-      </div>
+          <a href="index.php?page=detail&id=<?php echo htmlspecialchars($mobil['id']); ?>" class="car-card-v2">
+            <div class="card-image-v2">
+              <img src="../assets/images/<?php echo htmlspecialchars($mobil['gambar_utama']); ?>" alt="<?php echo htmlspecialchars($mobil['nama']); ?>">
+              <div class="image-counter">1/5</div>
+            </div>
+            <div class="card-content-v2">
+              <div class="certified-badge">
+                CARSOME Certified
+              </div>
+              <div class="title-wrapper">
+                <h4 class="car-title"><?php echo htmlspecialchars($mobil['nama']); ?></h4>
+                <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+              </div>
+              <p class="car-specs">
+                <?php echo htmlspecialchars($mobil['jarak_tempuh']); ?> km &middot; <?php echo htmlspecialchars($mobil['transmisi']); ?> &middot; <?php echo htmlspecialchars($mobil['lokasi']); ?>
+              </p>
+              <div class="price-section-v2">
+                <p class="main-price">Rp <?php echo number_format($mobil['harga_kredit'], 0, ',', '.'); ?></p>
+                <p class="cash-price"><s>Rp <?php echo number_format($mobil['harga_tunai'], 0, ',', '.'); ?></s> (Cash)</p>
+              </div>
+            </div>
+          </a>
 
+      <?php
+        } // Akhir dari while loop
+      } else {
+        echo "<p>Tidak ada mobil yang tersedia saat ini.</p>";
+      }
+      $koneksi->close();
+      ?>
     </div>
-    <div class="pagination">
-      <a href="#" class="page-number active">1</a>
-      <a href="#" class="page-number">2</a>
-      <a href="#" class="page-number">3</a>
-      <a href="#" class="next">Next »</a>
-    </div>
-
-  </div>
 </main>
