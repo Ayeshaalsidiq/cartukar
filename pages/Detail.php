@@ -98,10 +98,10 @@ $koneksi->close();
             <div class="purchase-actions-wrapper">
                 <i class="fas fa-phone-alt action-icon"></i>
                 <div class="purchase-buttons">
-                    <button class="btn btn-secondary v2">
+                    <a href="index.php?page=checkout&id=<?php echo $mobil['id']; ?>" class="btn btn-secondary v2">
                         <strong>Pesan Mobil</strong>
                         <span>Dapat Dikembalikan</span>
-                    </button>
+                    </a>
                     <button class="btn btn-primary v2">
                         <strong>Tes Drive Gratis</strong>
                         <span>Di Experience Center</span>
